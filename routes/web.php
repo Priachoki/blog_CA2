@@ -26,4 +26,8 @@ Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->nam
 Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/album-info/{album}', function ($album) {
+    return view('album-info', ['album' => $album]);
+})->name('album.info');
+
 

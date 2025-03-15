@@ -59,14 +59,14 @@
                     Good Days became popular on streaming platforms and became her first solo top 10 hit on the Billboard Hot 100.
                 </p>
                 <div class="w-full sm:w-1/2"> <!-- Adjusted width to make the image smaller -->
-                    <img src="https://media.newyorker.com/photos/62aa4a9b62ba82990c4ddbdb/1:1/w_1200,h_1200,c_limit/Pearce-SZA-Deluxe.jpg" 
+                    <img src="https://pbs.twimg.com/media/GAIPmlBW0AAxus8.jpg" 
                          alt="SZA" 
                          class="w-full h-auto rounded-lg shadow-lg"> <!-- Responsive image -->
                 </div>
         
                 <a 
                     href="/blog"
-                    class="uppercase bg-blue-500 text-gray-100 text-lg font-extrabold py-3 px-8 rounded-3xl">
+                    class="uppercase bg-purple-400 text-gray-100 text-lg font-extrabold py-3 px-8 rounded-3xl">
                     Find Out More
                 </a>
             </div>
@@ -96,6 +96,10 @@
                         Released: October 20, 2023 <br>
                         A deluxe edition featuring unreleased tracks and remixes from SZA's vault.
                     </p>
+                    <a href="{{ route('album.info', ['album' => 'LANA']) }}" 
+                        class="bg-purple-300 text-white py-2 px-4 rounded-lg mt-3 inline-block">
+                         More Info
+                     </a>
                 </div>
                 <div class="text-center">
                     <img src="https://upload.wikimedia.org/wikipedia/en/b/bf/SZA_-_Ctrl_cover.png" 
@@ -108,6 +112,10 @@
                         Released: June 9, 2017 <br>
                         SZA's debut studio album, featuring hits like "Love Galore" and "The Weekend."
                     </p>
+                    <a href="{{ route('album.info', ['album' => 'Ctrl']) }}" 
+                        class="bg-purple-300 text-white py-2 px-4 rounded-lg mt-3 inline-block">
+                         More Info
+                     </a>
                 </div>
     
                 <!-- Album 2: SOS -->
@@ -122,6 +130,10 @@
                         Released: December 9, 2022 <br>
                         SZA's second studio album, featuring "Good Days" and "I Hate U."
                     </p>
+                    <a href="{{ route('album.info', ['album' => 'SOS']) }}" 
+                        class="bg-purple-300 text-white py-2 px-4 rounded-lg mt-3 inline-block">
+                         More Info
+                     </a>
                 </div>
     
                 <!-- EP 1: See.SZA.Run -->
@@ -136,6 +148,10 @@
                         Released: October 29, 2012 <br>
                         SZA's debut EP, showcasing her early R&B and soul sound.
                     </p>
+                    <a href="{{ route('album.info', ['album' => 'See.SZA.Run']) }}" 
+                        class="bg-purple-300 text-white py-2 px-4 rounded-lg mt-3 inline-block">
+                         More Info
+                     </a>
                 </div>
     
                 <!-- EP 2: S -->
@@ -150,6 +166,10 @@
                         Released: April 10, 2013 <br>
                         SZA's second EP, featuring tracks like "Teen Spirit."
                     </p>
+                    <a href="{{ route('album.info', ['album' => 'S']) }}" 
+                        class="bg-purple-300 text-white py-2 px-4 rounded-lg mt-3 inline-block">
+                         More Info
+                     </a>
                 </div>
     
                 <!-- EP 3: Z -->
@@ -164,6 +184,10 @@
                         Released: April 8, 2014 <br>
                         SZA's third EP, featuring collaborations with Kendrick Lamar.
                     </p>
+                    <a href="{{ route('album.info', ['album' => 'Z']) }}" 
+                        class="bg-purple-300 text-white py-2 px-4 rounded-lg mt-3 inline-block">
+                         More Info
+                     </a>
                 </div>
             </div>
         </div>
