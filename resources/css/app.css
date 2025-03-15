@@ -5,9 +5,11 @@
 @import "tailwindcss/utilities";
 
 .background-image {
-    background-image: url('https://hips.hearstapps.com/hmg-prod/images/accepts-the-best-r-b-song-award-for-snooze-onstage-during-news-photo-1707161330.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* This makes the background static */
-    background-size: cover; /* Ensures the image covers the entire section */
+    background-image: url('https://s3-us-west-1.amazonaws.com/wass-media-library/music_artists/sza-20241109.jpg');
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Make the background static */
+    background-size: cover; /* Ensure the image covers the entire screen */
+    min-height: 100vh; /* Ensure the background covers the full viewport height */
+    width: 100%; /* Ensure the background covers the full viewport width */
 }

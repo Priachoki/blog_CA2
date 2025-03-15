@@ -4,9 +4,11 @@
 
 <!-- Parent container with the background image -->
 <div class="background-image"> <!-- Apply the background image here -->
-    <!-- Section with the fixed background image -->
-    <section style="height: 600px;"> <!-- Match the height with the CSS -->
-        <div class="grid grid-cols-1 m-auto">
+    <!-- Section with the fixed background image and color overlay -->
+    <section class="relative" style="height: 600px;"> <!-- Match the height with the CSS -->
+        <div class="absolute inset-0 bg-[#f5ebe0] z-10"></div> <!-- Removed opacity -->
+        
+        <div class="grid grid-cols-1 m-auto relative z-20"> <!-- Ensure content is above the overlay -->
             <header>
                 <div class="content">
                     <div class="flex text-gray-100 pt-10">
@@ -27,13 +29,14 @@
     </section>
 
     <!-- Section 1: SZA Bio -->
-    <section class="p-15 bg-[#f5ebe0] pt-20 pb-20"> <!-- Use padding instead of margin -->
+    <section class="p-15 bg-white pt-20 pb-20"> <!-- Use padding instead of margin -->
         <div class="mx-auto sm:grid grid-cols-2 gap-20 w-4/5 py-1">
-            <div class="w-3/4"> <!-- Resize the image container to 75% width -->
+            <div class="w-full "> <!-- Adjusted width to make the image smaller -->
                 <img src="https://i.pinimg.com/736x/6b/78/34/6b7834bf33bb71612370fe6cd752769f.jpg" 
                      alt="SZA" 
-                     class="w-full h-auto rounded-lg shadow-lg">
+                     class="w-full h-auto rounded-lg shadow-lg"> <!-- Responsive image -->
             </div>
+            
         
             <div class="m-auto sm:m-auto text-left w-4/5 block">
                 <h2 class="text-5xl font-extrabold text-gray-700">
@@ -55,6 +58,11 @@
                       for the Black Panther soundtrack; the song was nominated for the Golden Globe Award and the Academy Award for Best Original Song. In 2021, her single: 
                     Good Days became popular on streaming platforms and became her first solo top 10 hit on the Billboard Hot 100.
                 </p>
+                <div class="w-full sm:w-1/2"> <!-- Adjusted width to make the image smaller -->
+                    <img src="https://media.newyorker.com/photos/62aa4a9b62ba82990c4ddbdb/1:1/w_1200,h_1200,c_limit/Pearce-SZA-Deluxe.jpg" 
+                         alt="SZA" 
+                         class="w-full h-auto rounded-lg shadow-lg"> <!-- Responsive image -->
+                </div>
         
                 <a 
                     href="/blog"
@@ -64,12 +72,15 @@
             </div>
         </div>
     </section>
+    <section class="p-15 bg-[#f5ebe0] pt-20 pb-20"> 
+   <div m-8></div>
+    </section>
 
     <!-- Section 2: Expertise -->
-    <section class="p-15 bg-[#f5ebe0] pt-20 pb-20"> <!-- Use padding instead of margin -->
+    <section class="p-15 bg-white pt-20 pb-20"> <!-- Use padding instead of margin -->
         <div class="text-center p-15 text-black">
-            <h2 class="text-2xl pb-5 text-l"> 
-                I'm an expert in...
+            <h2 class="font-extrabold block text-4xl py-1"> 
+                Releases
             </h2>
 
             <span class="font-extrabold block text-4xl py-1">
@@ -107,7 +118,7 @@
             <div class="flex bg-yellow-700 text-gray-100 pt-10">
                 <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block">
                     <span class="uppercase text-xs">
-                        PHP
+                       RELEASES
                     </span>
 
                     <h3 class="text-xl font-bold py-10">
