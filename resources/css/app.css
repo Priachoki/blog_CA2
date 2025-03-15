@@ -4,12 +4,10 @@
 
 @import "tailwindcss/utilities";
 
-.background-image 
-{
+.background-image {
     background-image: url('https://hips.hearstapps.com/hmg-prod/images/accepts-the-best-r-b-song-award-for-snooze-onstage-during-news-photo-1707161330.jpg');
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    height: 600px;
+    background-attachment: fixed; /* This makes the background static */
+    background-size: cover; /* Ensures the image covers the entire section */
 }

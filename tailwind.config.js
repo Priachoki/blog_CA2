@@ -4,7 +4,11 @@ module.exports = {
     './resources/css/**/*.css',
   ],
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        'custom-beige': '#f5ebe0', // Define your custom color
+      },
+    },
   },
   variants: {},
   plugins: [
