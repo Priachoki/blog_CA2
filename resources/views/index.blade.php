@@ -80,35 +80,92 @@
     <section class="p-15 bg-white pt-20 pb-20"> <!-- Use padding instead of margin -->
         <div class="text-center p-15 text-black">
             <h2 class="font-extrabold block text-4xl py-1"> 
-                Releases
+                Albums
             </h2>
 
-            <span class="font-extrabold block text-4xl py-1">
-                Ux Design
-            </span>
-            <span class="font-extrabold block text-4xl py-1">
-                Project Management
-            </span>
-            <span class="font-extrabold block text-4xl py-1">
-                Digital Strategy
-            </span>
-            <span class="font-extrabold block text-4xl py-1">
-                Backend Development
-            </span>
-        </div>
-
-        <div class="text-center py-15">
-            <span class="uppercase text-s text-gray-400">
-                Blog
-            </span>
-
-            <h2 class="text-4xl font-bold py-10">
-                Recent Posts
-            </h2>
-
-            <p class="m-auto w-4/5 text-gray-500">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque exercitationem saepe enim veritatis, eos temporibus quaerat facere consectetur qui.
-            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 w-4/5 m-auto py-15">
+                <!-- Album 1: Ctrl -->
+                <div class="text-center">
+                    <img src="https://i.scdn.co/image/ab67616d00001e02209356748e67773a69774a02" 
+                         alt="LANA Album Cover" 
+                         class="w-48 h-48 mx-auto rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-extrabold text-gray-700 mt-4">
+                        LANA
+                    </h3>
+                    <p class="py-4 text-gray-700 text-sm leading-relaxed">
+                        Released: October 20, 2023 <br>
+                        A deluxe edition featuring unreleased tracks and remixes from SZA's vault.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/bf/SZA_-_Ctrl_cover.png" 
+                         alt="Ctrl Album Cover" 
+                         class="w-48 h-48 mx-auto rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-extrabold text-gray-700 mt-4">
+                        Ctrl
+                    </h3>
+                    <p class="py-4 text-gray-700 text-sm leading-relaxed">
+                        Released: June 9, 2017 <br>
+                        SZA's debut studio album, featuring hits like "Love Galore" and "The Weekend."
+                    </p>
+                </div>
+    
+                <!-- Album 2: SOS -->
+                <div class="text-center">
+                    <img src="https://media.pitchfork.com/photos/638902d5f777c8e284615da3/1:1/w_1500,h_1500,c_limit/SZA.jpg" 
+                         alt="SOS Album Cover" 
+                         class="w-48 h-48 mx-auto rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-extrabold text-gray-700 mt-4">
+                        SOS
+                    </h3>
+                    <p class="py-4 text-gray-700 text-sm leading-relaxed">
+                        Released: December 9, 2022 <br>
+                        SZA's second studio album, featuring "Good Days" and "I Hate U."
+                    </p>
+                </div>
+    
+                <!-- EP 1: See.SZA.Run -->
+                <div class="text-center">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFIaiWrUKL-O9aXwPKT8hv6zm4q99P9knhPw&s" 
+                         alt="See.SZA.Run EP Cover" 
+                         class="w-48 h-48 mx-auto rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-extrabold text-gray-700 mt-4">
+                        See.SZA.Run
+                    </h3>
+                    <p class="py-4 text-gray-700 text-sm leading-relaxed">
+                        Released: October 29, 2012 <br>
+                        SZA's debut EP, showcasing her early R&B and soul sound.
+                    </p>
+                </div>
+    
+                <!-- EP 2: S -->
+                <div class="text-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/3/3d/S_-_ep_-_by_-_SZA.png" 
+                         alt="S EP Cover" 
+                         class="w-48 h-48 mx-auto rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-extrabold text-gray-700 mt-4">
+                        S
+                    </h3>
+                    <p class="py-4 text-gray-700 text-sm leading-relaxed">
+                        Released: April 10, 2013 <br>
+                        SZA's second EP, featuring tracks like "Teen Spirit."
+                    </p>
+                </div>
+    
+                <!-- EP 3: Z -->
+                <div class="text-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/f/f4/SZA_-_Z.png" 
+                         alt="Z EP Cover" 
+                         class="w-48 h-48 mx-auto rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-extrabold text-gray-700 mt-4">
+                        Z
+                    </h3>
+                    <p class="py-4 text-gray-700 text-sm leading-relaxed">
+                        Released: April 8, 2014 <br>
+                        SZA's third EP, featuring collaborations with Kendrick Lamar.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -118,7 +175,7 @@
             <div class="flex bg-yellow-700 text-gray-100 pt-10">
                 <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block">
                     <span class="uppercase text-xs">
-                       RELEASES
+                       POPULAR
                     </span>
 
                     <h3 class="text-xl font-bold py-10">
