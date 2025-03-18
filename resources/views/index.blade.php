@@ -148,40 +148,234 @@
     </div>
 </section>
 
+<section class="p-15 bg-[#f5ebe0] pt-20 pb-20"> 
+    <div m-8></div>
+     </section>
 
+<section class="p-15 bg-white pt-20 pb-20">
+    <div class="text-center p-15 text-black">
+        <h2 class="font-extrabold text-5xl py-1">
+            SZA's Most Popular Songs
+        </h2>
 
-    <!-- Section 3: PHP Blog Post -->
-  <section class="p-15 bg-[#f5ebe0] pt-20 pb-20">
-    <div class="w-4/5 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        
-        <!-- Left Side: Image -->
-        <div class="w-full flex justify-center">
-            <img src="https://cdn.pixabay.com/photo/2014/05/03/01/03/laptop-336704_960_720.jpg" 
-                 alt="Technology" 
-                 class="w-full max-w-lg h-auto rounded-xl shadow-lg">
+       <div id="popular-songs">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 w-4/5 m-auto py-10">
+            <!-- First 6 Songs (Always Visible) -->
+            <div class="text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-extrabold text-gray-700 mb-4 italic">
+                    Luther (with SZA)
+                </h3>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2CGNAOSuO1MEFCbBRgUzjd?utm_source=generator&theme=0" 
+                        width="100%" height="152" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-extrabold text-gray-700 mb-4 italic">
+                    All The Stars (with Kendrick Lamar)
+                </h3>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3GCdLUSnKSMJhs4Tj6CV3s?utm_source=generator" 
+                        width="100%" height="152" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-extrabold text-gray-700 mb-4 italic">
+                    30 For 30 (with Kendrick Lamar)
+                </h3>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3aSWXU6owkZeVhh94XxEWO?utm_source=generator&theme=0" 
+                        width="100%" height="152" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-extrabold text-gray-700 mb-4 italic">
+                    BMF
+                </h3>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3U3hFkMr0Q90pD24EkE3Pr?utm_source=generator&theme=0" 
+                        width="100%" height="152" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-extrabold text-gray-700 mb-4 italic">
+                    Snooze
+                </h3>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4iZ4pt7kvcaH6Yo8UoZ4s2?utm_source=generator&theme=0" 
+                        width="100%" height="152" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-extrabold text-gray-700 mb-4 italic">
+                    Kill Bill
+                </h3>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1Qrg8KqiBpW07V7PNxwwwL?utm_source=generator&theme=0" 
+                        width="100%" height="152" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                </iframe>
+            </div>
         </div>
 
-        <!-- Right Side: Text Content -->
-        <div class="text-left w-4/5">
-            <h3 class="text-5xl font-extrabold text-gray-700 leading-tight">
-                Popular
-            </h3>
+        <!-- Hidden Additional Songs -->
+        <div id="extra-songs" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 w-4/5 m-auto py-10">
+            <div class="text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-extrabold text-gray-700 mb-4 italic">
+                    Saturn
+                </h3>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/040I32EKLxQrkuxQu1pqvT?utm_source=generator&theme=0" 
+                        width="100%" height="152" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                </iframe>
+            </div>
 
-            <p class="py-8 text-gray-700 text-lg leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Voluptas necessitatibus dolorum error culpa laboriosam. Enim voluptas earum repudiandae consequuntur ad?
-                Expedita labore aspernatur facilis quasi ex? Nemo hic placeat et?
-            </p>
+            <div class="text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-extrabold text-gray-700 mb-4 italic">
+                    Nobody Gets Me
+                </h3>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5Y35SjAfXjjG0sFQ3KOxmm?utm_source=generator&theme=0" 
+                        width="100%" height="152" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                </iframe>
+            </div>
 
-            <a href="" 
-               class="uppercase bg-purple-400 text-gray-100 text-lg font-extrabold py-3 px-8 rounded-3xl shadow-md">
-                Find Out More
-            </a>
+            <div class="text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-extrabold text-gray-700 mb-4 italic">
+                    Open Arms (feat. Travis Scott)
+                </h3>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6koKhrBBcExADvWuOgceNZ?utm_source=generator&theme=0" 
+                        width="100%" height="152" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-extrabold text-gray-700 mb-4 italic">
+                    Good Days
+                </h3>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4PMqSO5qyjpvzhlLI5GnID?utm_source=generator&theme=0" 
+                        width="100%" height="152" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                </iframe>
+            </div>
         </div>
 
+        <!-- SZA's Singles Section (Hidden Initially) -->
+        <div id="sza-singles" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 w-4/5 m-auto py-10">
+            <div class="text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-extrabold text-gray-700 mb-4 italic">No SZNS</h3>
+                <iframe src="https://open.spotify.com/embed/album/05kT1p6wyim40HJVzg7tt3?utm_source=generator&theme=0" width="100%" height="152"
+                        frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+
+            <div class="text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-extrabold text-gray-700 mb-4 italic">Snooze (feat. Justin Bieber)</h3>
+                <iframe src="https://open.spotify.com/embed/album/0bQ8NyqdTKKQpZHYhZqCUU?utm_source=generator&theme=0" width="100%" height="152"
+                        frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+
+            <div class="text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-extrabold text-gray-700 mb-4 italic">Slime You Out (feat. SZA)</h3>
+                <iframe src="https://open.spotify.com/embed/track/3RaCGXCiiMufRPoexXxGkV?utm_source=generator&theme=0" width="100%" height="152"
+                        frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+
+            <div class="text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-extrabold text-gray-700 mb-4 italic">Kill Bill (feat. Doja Cat)</h3>
+                <iframe src="https://open.spotify.com/embed/album/4OanbmuJAWz8JPVE4cJA9L?utm_source=generator&theme=0" width="100%" height="152"
+                        frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+
+            <div class="text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-extrabold text-gray-700 mb-4 italic">Special (feat. SZA)</h3>
+                <iframe src="https://open.spotify.com/embed/album/5Qw3usvS6dDOE0ErN6tl7O?utm_source=generator&theme=0" width="100%" height="152"
+                        frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+
+            <div class="text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-extrabold text-gray-700 mb-4 italic">Beautiful (feat. Future & SZA)</h3>
+                <iframe src="https://open.spotify.com/embed/album/180PxJxb58IlSaWU0XWY0Q?utm_source=generator&theme=0" width="100%" height="152"
+                        frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+
+            <div class="text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-extrabold text-gray-700 mb-4 italic">Shirt</h3>
+                <iframe src="https://open.spotify.com/embed/album/6Kqm5aSp69hTaOHTx38hsD?utm_source=generator&theme=0" width="100%" height="152"
+                        frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+
+            <div class="text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-extrabold text-gray-700 mb-4 italic">Persuasive</h3>
+                <iframe src="https://open.spotify.com/embed/album/7LYy99hyg4eHQeYkKPuS6R?utm_source=generator&theme=0" width="100%" height="152"
+                        frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+
+            <div class="text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-extrabold text-gray-700 mb-4 italic">No Love (feat. Cardi B)</h3>
+                <iframe src="https://open.spotify.com/embed/album/1Rt2ZYJ3tBKqXtFuB19xz4?utm_source=generator&theme=0" width="100%" height="152"
+                        frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+
+            <div class="text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-extrabold text-gray-700 mb-4 italic">Fue Mejor (feat. SZA)</h3>
+                <iframe src="https://open.spotify.com/embed/album/5h23sIlF1FvjdIdcJofXlI?utm_source=generator&theme=0" width="100%" height="152"
+                        frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+
+            <div class="text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-extrabold text-gray-700 mb-4 italic">Hit Different</h3>
+                <iframe src="https://open.spotify.com/embed/album/4xmJCh7ct63QvQ5wRc44db?utm_source=generator&theme=0" width="100%" height="152"
+                        frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <!-- Show More Button -->
+        <button id="showMoreBtn" class="bg-black hover:bg-gray-800 text-white text-lg py-3 px-6 rounded-lg mt-6">
+            Show More Songs
+        </button>
+        <button id="showSinglesBtn" class="bg-black hover:bg-gray-800 text-white text-lg py-3 px-6 rounded-lg ml-4">
+            Show Others
+        </button>
     </div>
 </section>
 
+<!-- JavaScript to Toggle Extra Songs -->
+<script>
+    document.getElementById("showMoreBtn").addEventListener("click", function () {
+        var extraSongs = document.getElementById("extra-songs");
+        var singles = document.getElementById("sza-singles");
+        if (extraSongs.classList.contains("hidden")) {
+            extraSongs.classList.remove("hidden");
+            singles.classList.add("hidden");
+            this.innerText = "Show Less Songs";
+        } else {
+            extraSongs.classList.add("hidden");
+            this.innerText = "Show More Songs";
+        }
+    });
+
+    document.getElementById("showSinglesBtn").addEventListener("click", function () {
+        var singles = document.getElementById("sza-singles");
+        var extraSongs = document.getElementById("extra-songs");
+        if (singles.classList.contains("hidden")) {
+            singles.classList.remove("hidden");
+            extraSongs.classList.add("hidden");
+            this.innerText = "Hide SZA's Singles";
+        } else {
+            singles.classList.add("hidden");
+            this.innerText = "Show SZA's Singles";
+        }
+    });
+</script>
+<section class="p-15 bg-[#f5ebe0] pt-20 pb-20"> 
+    <div m-8></div>
+     </section>
+    
 </div>
 
 @endsection
