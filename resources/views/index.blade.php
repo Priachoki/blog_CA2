@@ -4,29 +4,38 @@
 
 <!-- Parent container with the background image -->
 <div class="background-image"> <!-- Apply the background image here -->
-    <!-- Section with the fixed background image and color overlay -->
-    <section class="relative" style="height: 600px;"> <!-- Match the height with the CSS -->
-        <div class="absolute inset-0 bg-[#f5ebe0] z-10"></div> <!-- Removed opacity -->
-        
-        <div class="grid grid-cols-1 m-auto relative z-20"> <!-- Ensure content is above the overlay -->
-            <header>
-                <div class="content">
-                    <div class="flex text-gray-100 pt-10">
-                        <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block text-center">
-                            <h1 class="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">
-                                If all the world's a stage, put me in the front row
-                            </h1>
-                            <a 
-                                href="/blog"
-                                class="text-center bg-gray-50 text-gray-700 py-2 px-4 font-bold text-xl uppercase">
-                                Read More
-                            </a>
-                        </div>
+    <section class="p-15 bg-[#f5ebe0] pt-20 pb-20"> 
+        <div m-8></div>
+         </section>
+<!-- Section with a full-width video playing in the background -->
+<section class="relative" style="height: 600px; overflow: hidden;">
+    <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
+        <source src="{{ asset('videos/sza-reel.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Overlay Content (Optional) -->
+    <div class="grid grid-cols-1 m-auto relative z-20">
+        <header>
+            <div class="content">
+                <div class="flex justify-center pt-10">
+                    <div class="m-auto w-4/5 block text-center">
+                        <h1 class="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">
+                            Enjoy the Vibes 🎶
+                        </h1>
+                        <a href="/blog" class="text-center bg-gray-50 text-gray-700 py-2 px-4 font-bold text-xl uppercase">
+                            Read More
+                        </a>
                     </div>
                 </div>
-            </header>
-        </div>
-    </section>
+            </div>
+        </header>
+    </div>
+</section>
+
+<section class="p-15 bg-[#f5ebe0] pt-20 pb-20"> 
+    <div m-8></div>
+     </section>
 
     <!-- Section 1: SZA Bio -->
 <section class="p-15 bg-white pt-20 pb-20">
