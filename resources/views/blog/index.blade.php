@@ -33,7 +33,8 @@
 @foreach ($posts as $post)
     <div class="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15 border-b border-gray-200">
         <div>
-            <img src="{{ asset('images/' . $post->image_path) }}" alt="">
+            <!-- Display the image -->
+            <img src="{{ asset('images/' . $post->image_path) }}" alt="{{ $post->title }}" style="max-width: 100%; height: auto;">
         </div>
         <div>
             <h2 class="text-gray-700 font-bold text-5xl pb-4">
@@ -53,29 +54,29 @@
             </a>
 
             @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
-                <span class="float-right">
+                <!-- Buttons Container -->
+                <div class="flex items-center gap-4 mt-6">
+                    <!-- Edit Button -->
                     <a 
                         href="/blog/{{ $post->slug }}/edit"
-                        class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
+                        class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900 hover:text-gray-100 transition duration-300 ease-in-out transform hover:scale-105">
                         Edit
                     </a>
-                </span>
 
-                <span class="float-right">
-                     <form 
+                    <!-- Delete Button -->
+                    <form 
                         action="/blog/{{ $post->slug }}"
                         method="POST">
                         @csrf
                         @method('delete')
 
                         <button
-                            class="text-red-500 pr-3"
+                            class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 hover:text-gray-100 transition duration-300 ease-in-out transform hover:scale-105"
                             type="submit">
                             Delete
                         </button>
-
                     </form>
-                </span>
+                </div>
             @endif
         </div>
     </div>     
