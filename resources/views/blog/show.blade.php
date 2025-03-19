@@ -25,7 +25,7 @@
 
     <!-- Back Button -->
     <div class="mt-6">
-        <a href="{{ url('/blog') }}" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition duration-300">
+        <a href="{{ url('/blog') }}" class="bg-black hover:bg-gray-800 text-white text-lg py-3 px-6 rounded-lg ml-4">
             ← Back to Blog
         </a>
     </div>

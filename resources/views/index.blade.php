@@ -80,8 +80,7 @@
     <!-- Button Layout -->
     <div class="w-4/5 mx-auto mt-10 flex justify-center">
         <a href="/blog"
-           class="bg-purple-500 text-white text-lg font-extrabold py-3 px-8 rounded-3xl shadow-md 
-                  transform hover:scale-105 transition duration-300 ease-in-out">
+           class="bg-black hover:bg-gray-800 text-white text-lg py-3 px-6 rounded-lg mt-6">
             Find Out More
         </a>
     </div>
@@ -113,7 +112,7 @@
                     A deluxe edition featuring unreleased tracks and remixes from SZA's vault.
                 </p>
                 <a href="{{ route('album.info', ['album' => 'LANA']) }}" 
-                    class="bg-purple-600 hover:bg-purple-800 text-white text-lg py-3 px-6 rounded-lg mt-4 inline-block">
+                    class="bg-black hover:bg-gray-800 text-white text-lg py-3 px-6 rounded-lg mt-6">
                      More Info
                  </a>
             </div>
@@ -131,7 +130,7 @@
                     SZA's debut studio album, featuring hits like "Love Galore" and "The Weekend."
                 </p>
                 <a href="{{ route('album.info', ['album' => 'Ctrl']) }}" 
-                    class="bg-purple-600 hover:bg-purple-800 text-white text-lg py-3 px-6 rounded-lg mt-4 inline-block">
+                    class="bg-black hover:bg-gray-800 text-white text-lg py-3 px-6 rounded-lg mt-6">
                      More Info
                  </a>
             </div>
@@ -149,7 +148,7 @@
                     SZA's second studio album, featuring "Good Days" and "I Hate U."
                 </p>
                 <a href="{{ route('album.info', ['album' => 'SOS']) }}" 
-                    class="bg-purple-600 hover:bg-purple-800 text-white text-lg py-3 px-6 rounded-lg mt-4 inline-block">
+                    class="bg-black hover:bg-gray-800 text-white text-lg py-3 px-6 rounded-lg mt-6">
                      More Info
                  </a>
             </div>

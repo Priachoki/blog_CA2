@@ -129,7 +129,7 @@
     <!-- Back Button -->
     <div class="mt-10 text-center">
         <a href="{{ url('/') }}" 
-           class="bg-purple-600 hover:bg-purple-800 text-white text-lg font-bold py-3 px-6 rounded-lg shadow-lg transition transform hover:scale-105">
+           class="bg-black hover:bg-gray-800 text-white text-lg py-3 px-6 rounded-lg mt-6">
              Go Back Home
         </a>
     </div>

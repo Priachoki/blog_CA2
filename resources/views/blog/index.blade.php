@@ -3,14 +3,17 @@
 @section('content')
 
 <div class="background-image">
-    <div class="w-4/5 m-auto text-center background-overlay">
-        <div class="py-15 border-b border-gray-200">
-            <h1 class="text-6xl text-white">
-                Blog Posts
-            </h1>
+      <!-- Section with a full-width video playing in the background -->
+      <section class="relative" style="height: 600px; overflow: hidden;">
+        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
+            <source src="{{ asset('videos/sza-reel1.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+            </header>
         </div>
-    </div>
+    </section>
 </div>
+
 
 @if (session()->has('message'))
     <div class="w-4/5 m-auto mt-10 pl-2">
@@ -24,7 +27,7 @@
     <div class="pt-15 w-4/5 m-auto">
         <a 
             href="/blog/create"
-            class="bg-blue-500 uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
+            class="bg-black hover:bg-gray-800 text-white text-lg py-3 px-6 rounded-lg ml-4">
             Create post
         </a>
     </div>
@@ -51,7 +54,7 @@
             </p>
             <!-- END OF CHANGE -->
 
-            <a href="/blog/{{ $post->slug }}" class="uppercase bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
+            <a href="/blog/{{ $post->slug }}" class="bg-black hover:bg-gray-800 text-white text-lg py-3 px-6 rounded-lg ml-4">
                 Keep Reading
             </a>
 
