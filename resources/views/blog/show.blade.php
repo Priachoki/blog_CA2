@@ -9,7 +9,12 @@
     </div>
 </div>
 
-<div class="w-4/5 m-auto pt-20">
+<!-- Display the blog post image -->
+<div class="w-4/5 m-auto text-center">
+    <img src="{{ asset('images/' . $post->image_path) }}" alt="{{ $post->title }}" class="rounded-lg shadow-lg" style="max-width: 100%; height: auto;">
+</div>
+
+<div class="w-4/5 m-auto pt-10">
     <span class="text-gray-500">
         By <span class="font-bold italic text-gray-800">{{ $post->user->name }}</span>, Created on {{ date('jS M Y', strtotime($post->updated_at)) }}
     </span>
@@ -17,6 +22,13 @@
     <p class="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">
         {{ $post->description }}
     </p>
+
+    <!-- Back Button -->
+    <div class="mt-6">
+        <a href="{{ url('/blog') }}" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition duration-300">
+            ← Back to Blog
+        </a>
+    </div>
 </div>
 
-@endsection 
+@endsection

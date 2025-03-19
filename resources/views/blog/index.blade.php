@@ -33,7 +33,6 @@
 @foreach ($posts as $post)
     <div class="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15 border-b border-gray-200">
         <div>
-            <!-- Display the image -->
             <img src="{{ asset('images/' . $post->image_path) }}" alt="{{ $post->title }}" style="max-width: 100%; height: auto;">
         </div>
         <div>
@@ -45,33 +44,28 @@
                 By <span class="font-bold italic text-gray-800">{{ $post->user->name }}</span>, Created on {{ date('jS M Y', strtotime($post->updated_at)) }}
             </span>
 
+            <!-- THIS IS WHERE YOU NEED TO MAKE CHANGES -->
+            <!-- Change this line to show only a short preview of the description -->
             <p class="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">
-                {{ $post->description }}
+                {{ \Illuminate\Support\Str::limit($post->description, 150, '...') }}
             </p>
+            <!-- END OF CHANGE -->
 
             <a href="/blog/{{ $post->slug }}" class="uppercase bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
                 Keep Reading
             </a>
 
             @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
-                <!-- Buttons Container -->
                 <div class="flex items-center gap-4 mt-6">
-                    <!-- Edit Button -->
-                    <a 
-                        href="/blog/{{ $post->slug }}/edit"
+                    <a href="/blog/{{ $post->slug }}/edit"
                         class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900 hover:text-gray-100 transition duration-300 ease-in-out transform hover:scale-105">
                         Edit
                     </a>
 
-                    <!-- Delete Button -->
-                    <form 
-                        action="/blog/{{ $post->slug }}"
-                        method="POST">
+                    <form action="/blog/{{ $post->slug }}" method="POST">
                         @csrf
                         @method('delete')
-
-                        <button
-                            class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 hover:text-gray-100 transition duration-300 ease-in-out transform hover:scale-105"
+                        <button class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 hover:text-gray-100 transition duration-300 ease-in-out transform hover:scale-105"
                             type="submit">
                             Delete
                         </button>
@@ -81,4 +75,5 @@
         </div>
     </div>     
 @endforeach   
+
 @endsection
