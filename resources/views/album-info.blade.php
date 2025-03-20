@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="w-4/5 mx-auto py-10">
+<div class="w-4/5 mx-auto py-10" style="background-color: #FEFAE0; padding: 50px; border-radius: 10px;">
     <!-- Album Title -->
     <h1 class="text-5xl font-extrabold text-center italic text-purple-700">
         {{ ucfirst($album) }} Album Info
