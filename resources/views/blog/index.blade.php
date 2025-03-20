@@ -6,18 +6,11 @@
 <div class="min-h-screen bg-[#F3F4F6]">
 
     <!-- Header Section with Video Background -->
-    <section class="relative h-[600px] overflow-hidden">
-        <video autoplay muted loop class="absolute inset-0 w-full h-full object-contain">
+    <section class="relative" style="height: 600px; overflow: hidden;">
+        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
             <source src="{{ asset('videos/sza-reel1.mp4') }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <div class="relative z-20 flex items-center justify-center h-full bg-black/50">
-            <header class="text-center bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-lg">
-                <h1 class="text-5xl font-bold uppercase text-white tracking-wide">
-                    Blog Posts
-                </h1>
-            </header>
-        </div>
     </section>
 
     <!-- Session Message -->
