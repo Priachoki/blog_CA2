@@ -30,4 +30,14 @@ Route::get('/album-info/{album}', function ($album) {
     return view('album-info', ['album' => $album]);
 })->name('album.info');
 
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+
+
 
