@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController;
-
+use App\Http\Controllers\MoodController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,6 +41,10 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+Route::get('/moods', [MoodController::class, 'index']);
+
+Route::get('/moods/songs', [MoodController::class, 'getSongs']);
+
 
 
 
