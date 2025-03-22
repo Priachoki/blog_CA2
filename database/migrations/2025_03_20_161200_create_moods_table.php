@@ -9,10 +9,11 @@ class CreateMoodsTable extends Migration
     public function up()
     {
         Schema::create('moods', function (Blueprint $table) {
-            $table->id(); // Primary Key
-            $table->string('mood_name')->unique();
+            $table->id(); // this creates an unsignedBigInteger('id')
+            $table->string('mood_name');
             $table->timestamps();
         });
+        
     }
 
     public function down()
