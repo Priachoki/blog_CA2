@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- Blog Post Container -->
-<div class="min-h-screen bg-[#F3F4F6] py-12">
+<div class="min-h-screen  py-12" style="background-color: #FEFAE0;">
 
     <!-- Post Title Section -->
     <div class="w-4/5 mx-auto text-left">

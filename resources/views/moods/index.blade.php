@@ -2,7 +2,7 @@
 
 @section('content')
 @auth
-<div class="min-h-screen bg-[#FEFAE0] py-12 relative overflow-hidden">
+<div class="min-h-screen  py-12 relative overflow-hidden" style="background-color: #FEFAE0;">
 
     <div class="container mx-auto px-4 text-center">
         <h1 class="text-4xl font-bold mb-12 text-gray-800">🎵 Explore Music by Mood</h1>
@@ -12,7 +12,7 @@
                 <!-- Mood Card -->
                 <div class="rounded-2xl p-6 shadow-lg bg-white border-t-4 border-emerald-300 text-gray-800 cursor-pointer hover:scale-105 transform transition mood-portal"
                      data-target="portal-{{ $index }}">
-                    <div class="text-3xl mb-2">🎭 {{ $mood->mood_name }}</div>
+                    <div class="text-3xl mb-2"> {{ $mood->mood_name }}</div>
                     <p class="text-sm italic text-gray-500">Tap to explore this vibe</p>
                 </div>
 
@@ -58,7 +58,7 @@
 @endauth
 
 @guest
-<div class="min-h-screen flex items-center justify-center bg-[#FEFAE0] text-gray-700 text-xl">
+<div class="min-h-screen flex items-center justify-center  text-gray-700 text-xl" style="background-color: #FEFAE0;">
     Please 
     <a href="{{ route('login') }}" class="text-emerald-600 underline mx-2">log in</a> 
     to explore music by mood.

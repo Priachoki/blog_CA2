@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- Full Page Container with Background Color -->
-<div class="min-h-screen bg-[#F3F4F6]">
+<div class="min-h-screen" style="background-color: #FEFAE0;">
 
     <!-- Header Section with Video Background -->
     <section class="relative" style="height: 600px; overflow: hidden;">

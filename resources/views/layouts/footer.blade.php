@@ -1,6 +1,6 @@
-<footer class="bg-gray-500 py-16">
+<footer class="bg-gray-700 py-16">
 
-    <div class="sm:grid grid-cols-3 w-4/5 pb-10 m-auto border-b-2 border-gray-600">
+    <div class="sm:grid grid-cols-3 w-4/5 pb-10 m-auto border-b-2 border-gray-700">
         <!-- Pages Section -->
         <div>
             <h3 class="text-lg sm:font-bold text-[#e0e0e0] uppercase">
