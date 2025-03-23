@@ -1,12 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+@auth
 <div class="min-h-screen bg-[#FEFAE0] py-12 relative overflow-hidden">
-    <!-- 🎶💫 Floating background emojis (🎵 removed) -->
-    <div class="absolute text-6xl opacity-10 animate-slow-float pointer-events-none select-none">
-        <div class="absolute bottom-20 right-20">🎶</div>
-        <div class="absolute top-1/2 left-1/3">💫</div>
-    </div>
 
     <div class="container mx-auto px-4 text-center">
         <h1 class="text-4xl font-bold mb-12 text-gray-800">🎵 Explore Music by Mood</h1>
@@ -59,96 +55,13 @@
         </div>
     </div>
 </div>
+@endauth
 
-<!-- Styles -->
-<style>
-    .portal-overlay {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-        pointer-events: none;
-        background-color: #FEFAE0 !important;
-    }
-
-    .portal-overlay.show {
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-    }
-
-    .portal-overlay::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    .portal-overlay::-webkit-scrollbar-thumb {
-        background: rgba(0, 0, 0, 0.2);
-        border-radius: 10px;
-    }
-
-    .embed-container iframe {
-        width: 100% !important;
-        height: 80px !important;
-        border-radius: 8px;
-    }
-
-    /* Animations */
-    .animate-slide-up {
-        animation: slideUp 0.6s ease forwards;
-    }
-
-    .animate-fade-in {
-        animation: fadeIn 1s ease-in-out forwards;
-    }
-
-    .animate-slow-float {
-        animation: slowFloat 10s ease-in-out infinite;
-    }
-
-    @keyframes slideUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-
-    @keyframes slowFloat {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-20px); }
-    }
-</style>
-
-<!-- JavaScript -->
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const moodCards = document.querySelectorAll(".mood-portal");
-        const closeButtons = document.querySelectorAll(".close-portal");
-
-        moodCards.forEach(card => {
-            card.addEventListener("click", () => {
-                const target = card.getAttribute("data-target");
-                const portal = document.getElementById(target);
-
-                if (portal) {
-                    portal.classList.remove("hidden");
-                    void portal.offsetWidth;
-                    portal.classList.add("show");
-                }
-            });
-        });
-
-        closeButtons.forEach(button => {
-            button.addEventListener("click", () => {
-                const portal = button.closest(".portal-overlay");
-                portal.classList.remove("show");
-
-                setTimeout(() => {
-                    portal.classList.add("hidden");
-                }, 500);
-            });
-        });
-    });
-</script>
+@guest
+<div class="min-h-screen flex items-center justify-center bg-[#FEFAE0] text-gray-700 text-xl">
+    Please 
+    <a href="{{ route('login') }}" class="text-emerald-600 underline mx-2">log in</a> 
+    to explore music by mood.
+</div>
+@endguest
 @endsection
