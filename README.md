@@ -1,46 +1,121 @@
-## Laravel 8 Complete Blog
 
-This repository is linked to [this youtube video](https://www.youtube.com/watch?v=HKJDLXsTr8A&t=4710s) where I show you how to create a complete blog in Laravel 8 using best practices.
+# SZA Mood Portal – Laravel 8
 
- # Author: Code With Priyanka 
+Explore the moods, messages, and magic in SZA's music through this Laravel 8 application. The project allows users to log in and view blog posts, playlists, and song insights categorized by emotional vibes.
+
+---
+
+## Features
+
+- Mood-based blog navigation
+- Embedded Spotify playlists
+- Auth-protected content
+- Tailwind-powered responsive UI
+- Smooth transitions and portals
+
+---
+
+## Demo
+
+[Watch the Screencast](https://drive.google.com/file/d/10kcQdVJ3YlTKtcONw_SPEG5VPaxyfl0_/view?usp=drive_link)
+
+---
+
+## Screenshots
+
+### Blog Page
+
+![Blog Page](https://drive.google.com/file/d/1rDiJQVQehFc0nFVk-L8QDugJpfgXDg9h/view?usp=drive_link)
+
+### Homepage + Albums + Mood Explorer
+
+![Home Page](https://drive.google.com/file/d/1Z35WONGAfsJkzxhY9wvEakHDtn4kpEru/view?usp=drive_link)
+
+---
+
 ## Requirements
-•	PHP 7.3 or higher <br>
-•	Node 12.13.0 or higher <br>
 
-## Usage <br>
-Setting up your development environment on your local machine: <br>
+- PHP 7.3 or higher  
+- Composer  
+- Node.js 12.13.0 or higher  
+- MySQL
+
+---
+
+## Installation
+
 ```
-git clone git@github.com:codewithdary/laravel-8-complete-blog.git
-cd laravel-8-complete-blog
-cp .env.example .env
+git clone https://github.com/Priachoki/blog_CA2.git
+cd blog_CA2
 composer install
+npm install && npm run dev
+cp .env.example .env
 php artisan key:generate
 php artisan cache:clear && php artisan config:clear
-php artisan serve
 ```
 
-## Before starting <br>
-Create a database <br>
+---
+
+## Database Setup
+
 ```
-mysql
-create database laravelblog;
-exit;
+CREATE DATABASE sza_moods;
 ```
 
-Setup your database credentials in the .env file <br>
+Update your `.env` file:
+
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=laravelblog
-DB_USERNAME={USERNAME}
-DB_PASSWORD={PASSWORD}
+DB_DATABASE=sza_moods
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
 ```
 
-Migrate the tables
+Run migrations and seeders:
+
 ```
-php artisan migrate
+php artisan migrate --seed
+php artisan serve
 ```
 
-## Contributing
-Do not hesitate to contribute to the project by adapting or adding features ! Bug reports or pull requests are welcome.
+Access the app at: [http://localhost:8000](http://localhost:8000)
+
+---
+
+## Project Structure
+
+| Folder | Description |
+|--------|-------------|
+| `views/` | Blade templates for blog and moods |
+| `routes/` | Web routes |
+| `public/` | Frontend assets |
+| `database/seeders/` | Mood and song data |
+
+---
+
+## Tasks
+
+- [x] Set up Laravel project
+- [x] Build blog & mood views
+- [x] Add authentication
+- [x] Embed Spotify players
+- [ ] Add admin mood editor
+
+---
+
+## Author
+
+### Created by: **Priyanka**
+
+---
+
+## License
+
+MIT License
+
+---
+
+> "_Why is it so hard to accept the party is over?_"  
+> — SZA, *Drew Barrymore*

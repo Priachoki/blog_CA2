@@ -2,7 +2,7 @@
 
 @section('content')
 @auth
-<div class="min-h-screen  py-12 relative overflow-hidden" style="background-color: #FEFAE0;">
+<div class="min-h-screen py-12 relative overflow-hidden" style="background-color: #FEFAE0;">
 
     <div class="container mx-auto px-4 text-center">
         <h1 class="text-4xl font-bold mb-12 text-gray-800">🎵 Explore Music by Mood</h1>
@@ -37,9 +37,23 @@
                                         <span class="text-sm text-gray-500 italic"> – {{ $song->album }}</span>
                                     </p>
 
-                                    @if ($song->spotify_embed)
-                                        <div class="embed-container mt-2">
-                                            {!! $song->spotify_embed !!}
+                                    @php
+                                        // Extract track ID from spotify_embed HTML
+                                        preg_match('/track\/([a-zA-Z0-9]+)/', $song->spotify_embed ?? '', $matches);
+                                        $trackId = $matches[1] ?? null;
+                                    @endphp
+
+                                    @if ($trackId)
+                                        <div class="embed-container mt-4">
+                                            <iframe 
+                                                src="https://open.spotify.com/embed/track/{{ $trackId }}?utm_source=generator" 
+                                                width="100%" 
+                                                height="232" 
+                                                frameborder="0" 
+                                                allowfullscreen 
+                                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                                                loading="lazy">
+                                            </iframe>
                                         </div>
                                     @else
                                         <p class="text-red-500 text-sm mt-2">Embed not available</p>
@@ -58,7 +72,7 @@
 @endauth
 
 @guest
-<div class="min-h-screen flex items-center justify-center  text-gray-700 text-xl" style="background-color: #FEFAE0;">
+<div class="min-h-screen flex items-center justify-center text-gray-700 text-xl" style="background-color: #FEFAE0;">
     Please 
     <a href="{{ route('login') }}" class="text-emerald-600 underline mx-2">log in</a> 
     to explore music by mood.
@@ -82,10 +96,21 @@
         pointer-events: auto;
     }
 
+    .embed-container {
+        width: 100%;
+        max-width: 900px; /* Wider view */
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
     .embed-container iframe {
         width: 100% !important;
-        height: 80px !important;
-        border-radius: 8px;
+        height: 232px !important;
+        overflow: hidden;
+        border: none;
+        border-radius: 12px;
+        display: block;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     .animate-slide-up {
