@@ -18,7 +18,7 @@
 
                 <!-- Mood Portal -->
                 <div id="portal-{{ $index }}"
-                     class="w-full hidden portal-overlay bg-[#FEFAE0] text-gray-800 py-12">
+                     class="w-full hidden portal-overlay bg-[#FEFAE0] text-gray-800 py-12 relative z-50">
                     <!-- Close Button -->
                     <button class="absolute top-6 right-6 text-2xl bg-black/10 p-2 rounded-full hover:bg-black/20 close-portal">
                         ✖
@@ -65,3 +65,78 @@
 </div>
 @endguest
 @endsection
+
+<!-- Styles -->
+@push('styles')
+<style>
+    .portal-overlay {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        pointer-events: none;
+    }
+
+    .portal-overlay.show {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .embed-container iframe {
+        width: 100% !important;
+        height: 80px !important;
+        border-radius: 8px;
+    }
+
+    .animate-slide-up {
+        animation: slideUp 0.6s ease forwards;
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    @keyframes slideUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+</style>
+@endpush
+
+<!-- JavaScript -->
+@push('scripts')
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const moodCards = document.querySelectorAll(".mood-portal");
+
+        moodCards.forEach(card => {
+            card.addEventListener("click", () => {
+                const targetId = card.getAttribute("data-target");
+                const portal = document.getElementById(targetId);
+
+                if (portal) {
+                    portal.classList.remove("hidden");
+                    portal.classList.add("show");
+                }
+            });
+        });
+
+        document.addEventListener("click", function(event) {
+            if (event.target.classList.contains("close-portal")) {
+                const portal = event.target.closest(".portal-overlay");
+                if (portal) {
+                    portal.classList.remove("show");
+                    setTimeout(() => {
+                        portal.classList.add("hidden");
+                    }, 500);
+                }
+            }
+        });
+    });
+</script>
+@endpush
