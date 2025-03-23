@@ -104,6 +104,19 @@ Access the app at: [http://localhost:8000](http://localhost:8000)
 - [x] Embed Spotify players
 - [ ] Add admin mood editor
 
+
+---
+
+## Demo Credentials (For Testing)
+
+You can use the following test accounts to explore the app:
+
+| Name             | Email                          | Password     |
+|------------------|--------------------------------|--------------|
+| Mark Clark       | markclark@gmail.com            | `456!456Pi`  |
+| Priyanka Achoki  | priyankaachoki2@gmail.com      | `123!123Pi`  |
+
+>  **Note**: These accounts are for demo purposes only. Please change credentials or restrict access if deploying publicly.
 ---
 
 ## Author
