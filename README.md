@@ -25,12 +25,12 @@ Explore the moods, messages, and magic in SZA's music through this Laravel 8 app
 
 ### Blog Page
 
-<img src="screenshots/127.0.0.1_8000_blog.png" alt="Blog Screenshot" width="500" height="300"/>
+<img src="screenshots/127.0.0.1_8000_blog.png" alt="Blog Screenshot" />
 
 
 ### Homepage + Albums + Mood Explorer
 
-<img src="screenshots/127.0.0.1_8000_.png" alt="Homepage Screenshot" width="500" height="300"/>
+<img src="screenshots/127.0.0.1_8000_.png" alt="Homepage Screenshot" />
 
 ---
 
