@@ -3,69 +3,32 @@
 @section('content')
 @auth
 <div class="min-h-screen py-12 relative overflow-hidden" style="background-color: #FEFAE0;">
-
     <div class="container mx-auto px-4 text-center">
         <h1 class="text-4xl font-bold mb-12 text-gray-800">🎵 Explore Music by Mood</h1>
 
+        <!-- Mood Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             @foreach ($moods as $index => $mood)
-                <!-- Mood Card -->
-                <div class="rounded-2xl p-6 shadow-lg bg-white border-t-4 border-emerald-300 text-gray-800 cursor-pointer hover:scale-105 transform transition mood-portal"
-                     data-target="portal-{{ $index }}">
+                <div 
+                    class="rounded-2xl p-6 shadow-lg bg-white border-t-4 border-emerald-300 text-gray-800 cursor-pointer hover:scale-105 transform transition mood-portal"
+                    data-mood="{{ $mood->mood_name }}"
+                    data-index="{{ $index }}"
+                >
                     <div class="text-3xl mb-2"> {{ $mood->mood_name }}</div>
                     <p class="text-sm italic text-gray-500">Tap to explore this vibe</p>
                 </div>
-
-                <!-- Mood Portal -->
-                <div id="portal-{{ $index }}"
-                     class="w-full hidden portal-overlay bg-[#FEFAE0] text-gray-800 py-12 relative z-50">
-                    <!-- Close Button -->
-                    <button class="absolute top-6 right-6 text-2xl bg-black/10 p-2 rounded-full hover:bg-black/20 close-portal">
-                        ✖
-                    </button>
-
-                    <!-- Portal Title -->
-                    <h2 class="text-4xl font-extrabold mt-10 mb-6 animate-fade-in">🎧 {{ $mood->mood_name }} Playlist</h2>
-
-                    <!-- Songs List -->
-                    @if ($mood->songs->isNotEmpty())
-                        <div class="w-full max-w-5xl grid grid-cols-1 sm:grid-cols-2 gap-6 px-6 pb-12">
-                            @foreach ($mood->songs as $song)
-                                <div class="bg-white p-4 rounded-xl shadow border border-neutral-200 text-left animate-slide-up">
-                                    <p class="text-lg font-semibold text-gray-800 mb-2">
-                                        🎵 {{ $song->song_title }}
-                                        <span class="text-sm text-gray-500 italic"> – {{ $song->album }}</span>
-                                    </p>
-
-                                    @php
-                                        // Extract track ID from spotify_embed HTML
-                                        preg_match('/track\/([a-zA-Z0-9]+)/', $song->spotify_embed ?? '', $matches);
-                                        $trackId = $matches[1] ?? null;
-                                    @endphp
-
-                                    @if ($trackId)
-                                        <div class="embed-container mt-4">
-                                            <iframe 
-                                                src="https://open.spotify.com/embed/track/{{ $trackId }}?utm_source=generator" 
-                                                width="100%" 
-                                                height="232" 
-                                                frameborder="0" 
-                                                allowfullscreen 
-                                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                                                loading="lazy">
-                                            </iframe>
-                                        </div>
-                                    @else
-                                        <p class="text-red-500 text-sm mt-2">Embed not available</p>
-                                    @endif
-                                </div>
-                            @endforeach
-                        </div>
-                    @else
-                        <p class="text-gray-500 italic mb-10">No songs available for this mood.</p>
-                    @endif
-                </div>
             @endforeach
+        </div>
+
+        <!-- Shared Mood Portal Overlay -->
+        <div id="shared-portal"
+            class="portal-overlay hidden fixed inset-0 bg-[#FEFAE0] overflow-y-auto z-50 py-12 px-6 text-gray-800">
+
+            <button class="absolute top-6 right-6 text-3xl p-2 rounded-full hover:text-purple-600 close-portal">&#10006;</button>
+
+            <h2 id="portal-title" class="text-4xl font-extrabold mt-10 mb-6 text-center animate-fade-in">🎷 Playlist</h2>
+
+            <div id="portal-content" class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6"></div>
         </div>
     </div>
 </div>
@@ -80,7 +43,6 @@
 @endguest
 @endsection
 
-<!-- Styles -->
 @push('styles')
 <style>
     .portal-overlay {
@@ -96,17 +58,9 @@
         pointer-events: auto;
     }
 
-    .embed-container {
-        width: 100%;
-        max-width: 900px; /* Wider view */
-        margin: 0 auto;
-        overflow: hidden;
-    }
-
     .embed-container iframe {
         width: 100% !important;
         height: 232px !important;
-        overflow: hidden;
         border: none;
         border-radius: 12px;
         display: block;
@@ -133,34 +87,72 @@
 </style>
 @endpush
 
-<!-- JavaScript -->
 @push('scripts')
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const moodCards = document.querySelectorAll(".mood-portal");
+        const sharedPortal = document.getElementById("shared-portal");
+        const closeBtn = sharedPortal.querySelector(".close-portal");
+        const portalTitle = document.getElementById("portal-title");
+        const portalContent = document.getElementById("portal-content");
+
+        const moodData = @json($moods);
 
         moodCards.forEach(card => {
             card.addEventListener("click", () => {
-                const targetId = card.getAttribute("data-target");
-                const portal = document.getElementById(targetId);
+                const moodName = card.dataset.mood;
+                const index = card.dataset.index;
+                const mood = moodData[index];
 
-                if (portal) {
-                    portal.classList.remove("hidden");
-                    portal.classList.add("show");
+                portalTitle.textContent = `🎷 ${moodName} Playlist`;
+                portalContent.innerHTML = '';
+
+                if (mood.songs && mood.songs.length > 0) {
+                    mood.songs.forEach(song => {
+                        const container = document.createElement('div');
+                        container.className = 'bg-white p-4 rounded-xl shadow border border-neutral-200 text-left animate-slide-up';
+
+                        const title = document.createElement('p');
+                        title.className = 'text-lg font-semibold text-gray-800 mb-2';
+                        title.innerHTML = `🎵 ${song.song_title} <span class="text-sm text-gray-500 italic">&ndash; ${song.album}</span>`;
+                        container.appendChild(title);
+
+                        const match = song.spotify_embed?.match(/track\/([a-zA-Z0-9]+)/);
+                        const trackId = match ? match[1] : null;
+
+                        if (trackId) {
+                            const iframe = document.createElement('iframe');
+                            iframe.src = `https://open.spotify.com/embed/track/${trackId}?utm_source=generator`;
+                            iframe.width = '100%';
+                            iframe.height = '232';
+                            iframe.frameBorder = '0';
+                            iframe.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+                            iframe.loading = 'lazy';
+                            iframe.className = 'rounded-xl mt-4';
+                            container.appendChild(iframe);
+                        } else {
+                            const error = document.createElement('p');
+                            error.className = 'text-red-500 text-sm mt-2';
+                            error.textContent = 'Embed not available';
+                            container.appendChild(error);
+                        }
+
+                        portalContent.appendChild(container);
+                    });
+                } else {
+                    portalContent.innerHTML = `<p class="text-gray-500 italic mb-10">No songs available for this mood.</p>`;
                 }
+
+                sharedPortal.classList.remove("hidden");
+                sharedPortal.classList.add("show");
             });
         });
 
-        document.addEventListener("click", function(event) {
-            if (event.target.classList.contains("close-portal")) {
-                const portal = event.target.closest(".portal-overlay");
-                if (portal) {
-                    portal.classList.remove("show");
-                    setTimeout(() => {
-                        portal.classList.add("hidden");
-                    }, 500);
-                }
-            }
+        closeBtn.addEventListener("click", () => {
+            sharedPortal.classList.remove("show");
+            setTimeout(() => {
+                sharedPortal.classList.add("hidden");
+            }, 300);
         });
     });
 </script>

@@ -13,11 +13,21 @@ class PostsController extends Controller
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return view('blog.index')
-            ->with('posts', Post::orderBy('updated_at', 'DESC')->get());
+        $query = Post::query();
+    
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $query->where('title', 'like', '%' . $search . '%')
+                  ->orWhere('description', 'like', '%' . $search . '%');
+        }
+    
+        $posts = $query->orderBy('updated_at', 'DESC')->get();
+    
+        return view('blog.index', compact('posts'));
     }
+    
 
     public function create()
     {
