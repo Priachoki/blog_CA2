@@ -60,7 +60,7 @@ php artisan cache:clear && php artisan config:clear
 ## Database Setup
 
 ```
-CREATE DATABASE sza_moods;
+CREATE DATABASE  laravelblog;
 ```
 
 Update your `.env` file:
@@ -69,7 +69,7 @@ Update your `.env` file:
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=sza_moods
+DB_DATABASE= laravelblog
 DB_USERNAME=your_username
 DB_PASSWORD=your_password
 ```
